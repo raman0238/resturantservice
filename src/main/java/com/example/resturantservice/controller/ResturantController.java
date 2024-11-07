@@ -3,14 +3,12 @@ package com.example.resturantservice.controller;
 import com.example.resturantservice.model.Resturant;
 import com.example.resturantservice.service.ResturantService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
+@RequestMapping("/resturant")
 public class ResturantController {
 
     @Autowired
@@ -21,7 +19,7 @@ public class ResturantController {
        return resturantService.getAllResturants();
     }
 
-    @PostMapping("/resturant")
+    @PostMapping("/register")
     public void register(@RequestBody Resturant resturant) {
         resturantService.register(resturant);
     }
